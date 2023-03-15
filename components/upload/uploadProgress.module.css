@@ -1,0 +1,24 @@
+.circle {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    padding: 0 12px 14px 3px ;
+    background: #bec4c0;
+    border: 1px solid  #bec4c0 ;
+    color: #000;
+    text-align: center;
+    font: 13px Arial, sans-serif;
+    background-color: #bec4c0 ;
+  }
+
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 20px;
+    border-style: outset;
+    padding: 15px 10px 15px 10px;
+    margin: 0 0 10px 0;
+    padding-left: 30px;
+}

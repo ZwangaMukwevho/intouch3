@@ -1,0 +1,65 @@
+.divHeader {
+    /* width: 100%; */
+    margin: 1px 1px 1px 1px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divSVG{
+    width: 30px;
+    width: 30px;
+    padding: 0 20px;
+}
+
+.iconsRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.active {
+    border-bottom: 1px solid firebrick;
+}
+
+.image {
+    border-radius: 50px;
+    border-radius: 50%;
+}
+
+.inputBox {
+    width: 130%;
+    padding: 10px 10px 10px 10px;
+    margin: 20px 20px 20px 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid black;
+    background: white;
+    color: black;
+    
+  }
+
+.marginRight{
+    margin-right: 80px;
+    margin-left: 100px;
+}
+
+.marginLeft{
+    margin-left: 80px;
+}
+
+@media screen and (max-width: 480px) {
+    .mainDiv{
+      width: 50%;
+  }
+
+  .marginRight{
+    margin-right: 10px;
+    margin-left: 100px;
+}
+  
+  
+  }
+   

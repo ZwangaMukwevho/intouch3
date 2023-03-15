@@ -1,0 +1,41 @@
+
+.statusRed {
+    background-color:red;
+    color: white;
+    margin: 0 40px 0 10px;
+    border-radius: 7px;
+    padding: 1px 5px 1px 10px;
+}
+
+.statusGreen{
+    background-color:green;
+    color: white;
+    margin: 0 40px 0 10px;
+    border-radius: 7px;
+    padding: 1px 5px 1px 10px;
+}
+
+.statusGrey {
+    background-color:grey;
+    color: white;
+    margin: 0 40px 0 10px;
+    border-radius: 7px;
+    padding: 1px 5px 1px 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .statusRed {
+        padding: 1px 5px 1px 5px;
+        margin: 0 1px 0 1px;
+    }
+    
+    .statusGreen{
+        padding: 1px 5px 1px 5px;
+        margin: 0 1px 0 1px;
+    }
+    
+    .statusGrey {
+        padding: 1px 5px 1px 5px;
+        margin: 0 1px 0 1px;
+    }
+  }

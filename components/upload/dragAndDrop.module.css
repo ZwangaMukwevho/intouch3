@@ -1,0 +1,28 @@
+
+
+.baseStyle {
+    display: "flex";
+    flex-direction: "column";
+    align-items: "center";
+    padding: "20px";
+    border-width: 2;
+    border-radius: 2;
+    border-color: "#eeeeee";
+    border-style: "dashed";
+    background-color: "#fafafa";
+    color: "#bdbdbd";
+    transition: "border .3s ease-in-out";
+}
+
+.errorMessage{
+    text-align: center;
+    color: red;
+}
+
+.loader{
+    display: "flex";
+    flex-direction: "column";
+    align-items: center;
+    border-color: black;
+    border-style: "dashed";
+}

@@ -1,0 +1,137 @@
+.mainDiv{
+    width: 100%;
+    margin-left: 50px;
+    margin-bottom: 0px;
+}
+
+.title{
+    margin: 65px 0 0 0;
+    font-size: 60px;
+    font-family: "Franklin Gothic Medium", "Bahnschrift SemiBold", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+
+.subtitle {
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.listNumber {
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    padding: 4px;
+    margin: 8px;
+
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+
+    font-size: 1px;
+    /* font: 5px Arial, sans-serif; */
+}
+
+.circle {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    padding: 0 12px 14px 3px ;
+    background: #bec4c0;
+    border: 1px solid  #EDC1B7 ;
+    color: #000;
+    text-align: center;
+    font: 13px Arial, sans-serif;
+    background-color: #EDC1B7 ;
+  }
+
+  .marginLeft {
+    margin-left: 10px;
+  }
+
+  .infoPar {
+    background-color: #EAAEAE;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    margin: 25px 50px 20px 0;
+    font-weight: bold;
+  }
+
+  .docDiv {
+    margin-top: 30px;
+  }
+
+  .paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 2px solid #bec4c0;
+    color: #5f6163;
+    cursor: pointer;
+  }
+  
+  .paginationBttns a:hover {
+    color: white;
+    background-color: #bec4c0;
+  }
+  
+  .paginationActive a {
+    color: white;
+    background-color: #bec4c0;
+  }
+  
+  .paginationDisabled a {
+    color:  #bec4c0;
+    background-color:  #bec4c0;
+    border-color:  #bec4c0;
+  }
+
+  .marginBottom {
+    margin-bottom: 30px;
+  }
+ 
+
+  @media screen and (max-width: 480px) {
+    .mainDiv{
+      width: 100%;
+      margin-left: 10px;
+      margin-bottom: 0px;
+  }
+
+  .title{
+    font-family: "Franklin Gothic Medium", "Bahnschrift SemiBold", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    margin: 0 0 0 0;
+    font-size: 35px;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+
+.infoPar {
+  background-color: #EAAEAE;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+  margin: 5px 5px 13px 0;
+  font-weight: bold;
+}
+  
+  }
+   

@@ -1,0 +1,57 @@
+.app {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #f8f9fd;
+  }
+
+  .loginForm {
+    background-color: #DAEDED;
+    border-radius: 15px;
+    padding-top: 1rem;
+    padding-right: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 6rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .title {
+    font-size: 35px;
+    font-weight: 900;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .app {
+      font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1px;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #f8f9fd;
+    }
+
+    .loginForm {
+      background-color: #DAEDED;
+      border-radius: 15px;
+      gap: 1px;
+      margin: 10px 20px 10px 20px;
+      padding: 1px 35px 20px 35px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      overflow-y: scroll;
+  
+    }
+
+    .title {
+      font-size: 25px;
+      font-weight: 600;
+      margin: 1px 1px 1px 1px;
+    }
+  }

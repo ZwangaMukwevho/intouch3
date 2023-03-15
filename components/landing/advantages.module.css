@@ -1,0 +1,28 @@
+
+
+.heading{
+    margin: 20px 50px 20px 50px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+.circles{ 
+    margin-top: 30px;
+    background: #F2ECEC ;
+    padding: 10px 10px 10px 10px;
+    border-radius: 50%; 
+    /* margin: 20px 50px 20px 50px; */
+    width: 180px;
+    height: 180px
+}
+
+.circlesContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}

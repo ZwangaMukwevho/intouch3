@@ -1,0 +1,107 @@
+.outerBorder{
+    border-radius: 20px;
+    /* border-style: groove; */
+}
+
+
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 5px 5px 5px 5px;
+    margin: 10px 0 10px 0;
+    padding-left: 30px;
+    padding-right: 0px;
+    border: calc(1px + 0.2vw) solid transparent;
+	background-origin: border-box;
+    background-clip: content-box, border-box;
+	background-size: cover;
+    box-sizing: border-box;
+	box-shadow: 0 0 2px 2px #EDC1B7;
+}
+
+.title{
+    flex: 33%; 
+    border-radius: 10px;
+    border-color: red;
+}
+
+.type{
+    flex: 33%;
+    border-radius: 10px;
+    border-color: red;
+}
+
+.download{
+    flex: 33%;
+    border-radius: 10px;
+    border-color: red;
+}
+
+.italics{
+    color: red;
+    font-weight: bold;
+}
+
+.title{
+    font-family: "Franklin Gothic Medium", "Bahnschrift SemiBold", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    margin: 0 0 0 0;
+    font-size: 35px;
+}
+
+.docTitle{
+    text-align: start;
+    margin: 0 0 0 0;
+    padding: 1px 0px 1px 0px;
+    font-size: 16px;
+    width: 350px;
+}
+
+.categoryTitle{
+    text-align: start;
+    margin: 0 0 0 0;
+    padding: 1px 0px 1px 20px;
+    font-size: 16px;
+    width: 300px;
+}
+  
+
+@media screen and (max-width: 480px) {
+  .title{
+    font-family: "Franklin Gothic Medium", "Bahnschrift SemiBold", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    margin: 0 0 0 0;
+    font-size: 19px;
+    }
+
+    .docTitle{
+        text-align: start;
+        margin: 0 0 0 0;
+        padding: 1px 0px 1px 0px;
+        font-size: 14px;
+        width: 290px;
+    }
+
+    .categoryTitle{
+        text-align: start;
+        margin: 0 0 0 0;
+        padding: 1px 0px 1px 20px;
+        font-size: 14px;
+    }
+
+    .row{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 1px 5px 1px 10px;
+        margin: 10px 0 10px 0;
+        border: calc(1px + 0.2vw) solid transparent;
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        background-size: cover;
+        box-sizing: border-box;
+        box-shadow: 0 0 2px 2px #EDC1B7;
+    }
+    
+}
+   

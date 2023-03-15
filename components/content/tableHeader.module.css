@@ -1,0 +1,78 @@
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 20px;
+    padding: 15px 10px 15px 10px;
+    margin: 0 0 0 0;
+    padding-left: 30px;
+    border-radius: 10px;
+    font-weight:bolder;
+}
+
+.row #title{
+    flex: 20%; 
+    font-size: 13px;
+}
+
+.row #type{
+    flex: 20%;
+    font-size: 13px;
+}
+
+.row #date{
+    flex: 20%;
+    font-size: 13px;
+}
+
+.row #status{
+    flex: 20%;
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+.row #download{
+    flex: 20%;
+    font-size: 13px;
+    padding-left: 50px;
+}
+
+@media screen and (max-width: 480px) {
+    .row{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        border-radius: 20px;
+        padding: 1px 2px 1px 1px;
+        margin: 0 0 0 0;
+        padding-left: 1px;
+        border-radius: 10px;
+        font-weight:bold;
+        
+    }
+
+    .row #title{
+        flex: 1 125px;
+        padding: 3px 3px 3px 7px;
+        font-size: 12px;
+        }
+    
+    .row #type{
+        flex: 2 50px;
+        padding: 3px 1px 3px 1px;
+        font-size: 12px;
+    }
+    
+    .row #date{
+        flex: 3 30px;
+        padding: 3px 1px 3px 15px;
+        font-size: 12px;
+    }
+    
+    .row #status{
+        flex: 4 60px;
+        padding: 10px 7px 3px 7px;
+        font-size: 12px;
+    }
+  }
+     
