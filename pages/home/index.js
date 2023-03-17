@@ -96,13 +96,3 @@ export default function SideBarTest(props) {
     </div>
   );
 }
-
-export function getStaticProps() {
-  const docs = DocsListV2();
-
-  return {
-    props: {
-      posts: docs,
-    },
-  };
-}
