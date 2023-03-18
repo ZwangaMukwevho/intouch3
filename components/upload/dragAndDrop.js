@@ -4,7 +4,6 @@ import UploadFileIcon from "@mui/icons-material/UploadFile";
 import classes from "./dragAndDrop.module.css";
 import Storage from "../../logic/config/firebaseConfig.js";
 import { DocsArrayContext } from "../../logic/context/uploadProgressContext";
-import StepProgressBar from "react-step-progress";
 import DocsToUpload from "./docsToUpload";
 import { useContext, useEffect, useRef } from "react";
 import HorizontalLinearStepper from "../../components/upload/horizontalLinearStepper";
@@ -159,10 +158,6 @@ function DropzoneComponent(props) {
     prevCount.current = docsToUploadArr.length;
   }, [docsToUploadArr]);
 
-  const step1Content = <h1></h1>;
-  const step2Content = <h1></h1>;
-  const step3Content = <h1></h1>;
-
   return (
     <>
       <div className={classes.loader}>
@@ -186,8 +181,8 @@ function DropzoneComponent(props) {
         </div>
       </div>
       <DocsToUpload />
-      <div className="">
-        <HorizontalLinearStepper />
+      <div className={classes.margin}>
+        <HorizontalLinearStepper docCount={prevCount.current} />
       </div>
     </>
   );

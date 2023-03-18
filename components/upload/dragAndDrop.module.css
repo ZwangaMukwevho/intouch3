@@ -26,3 +26,8 @@
     border-color: black;
     border-style: "dashed";
 }
+
+.margin {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}

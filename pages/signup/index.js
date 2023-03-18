@@ -44,6 +44,7 @@ function SignUp() {
           // send email verification link
           sendVerification()
             .then(() => {
+              console.log("verification sent");
               // Email verification sent!
               // ...
             })
