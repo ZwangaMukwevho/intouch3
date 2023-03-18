@@ -33,11 +33,11 @@ function SignUp() {
     if (passwordOne === passwordTwo)
       signUp(email, passwordOne)
         .then((authUser) => {
-          //   console.log(
-          //     `Success. The user is created in firebase: ${JSON.stringify(
-          //       authUser
-          //     )}`
-          //   );
+          console.log(
+            `Success. The user is created in firebase: ${JSON.stringify(
+              authUser
+            )}`
+          );
 
           router.push("/confirmation");
 

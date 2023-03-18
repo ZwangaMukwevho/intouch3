@@ -7,6 +7,7 @@ import { DocsArrayContext } from "../../logic/context/uploadProgressContext";
 import StepProgressBar from "react-step-progress";
 import DocsToUpload from "./docsToUpload";
 import { useContext, useEffect, useRef } from "react";
+import HorizontalLinearStepper from "../../components/upload/horizontalLinearStepper";
 import Loader from "../../components/upload/loader.js";
 import {
   ref,
@@ -56,6 +57,7 @@ function DropzoneComponent(props) {
     }
   }
 
+  var item;
   const onDrop = (acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader();
@@ -185,29 +187,7 @@ function DropzoneComponent(props) {
       </div>
       <DocsToUpload />
       <div className="">
-        <StepProgressBar
-          startingStep={0}
-          onSubmit={onFormSubmit}
-          steps={[
-            {
-              label: "Scanned Document",
-              name: "Briefing1",
-              content: step1Content,
-              validator: step1Validator,
-            },
-            {
-              label: "picture of yourself holding your ID",
-              name: "Image-Acquisition",
-              content: step2Content,
-              validator: step2Validator,
-            },
-            {
-              label: "Uploaded Done",
-              name: "Finish",
-              content: step3Content,
-            },
-          ]}
-        />
+        <HorizontalLinearStepper />
       </div>
     </>
   );
