@@ -117,7 +117,16 @@ function SignIn() {
     <ParentForm
       infotagone={
         <div>
-          Don't have an account already? <Link href="/signup">Sign up</Link>
+          Don't have an account already?{" "}
+          <Link
+            href="/signup"
+            style={{
+              textDecoration: "underline",
+              color: "blue",
+            }}
+          >
+            Sign up
+          </Link>
         </div>
       }
       title={"Welcome to InTouch"}
