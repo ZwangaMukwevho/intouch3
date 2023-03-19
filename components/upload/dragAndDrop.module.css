@@ -1,4 +1,7 @@
-
+.stepperLabel {
+    font-size: 15px;
+    color: black;
+}
 
 .baseStyle {
     display: "flex";
