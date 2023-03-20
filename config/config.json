@@ -1,12 +1,12 @@
 {
   "site": {
-    "title": "Bigspring Light Nextjs",
+    "title": "INTOUCH",
     "base_url": "/",
-    "favicon": "/images/favicon.png",
+    "favicon": "/images/logo.png",
     "logo": "/images/logo.png",
-    "logo_width": "200",
-    "logo_height": "48",
-    "logo_text": "Bigspring Light"
+    "logo_width": "100",
+    "logo_height": "28",
+    "logo_text": "INTOUCH"
   },
 
   "settings": {

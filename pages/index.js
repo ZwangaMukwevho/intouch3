@@ -10,7 +10,8 @@ import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
 
 const Home = ({ frontmatter }) => {
-  const { banner, feature, services, workflow, call_to_action } = frontmatter;
+  const { banner, feature, services, workflow, call_to_action, listService } =
+    frontmatter;
   const { title } = config.site;
 
   return (
@@ -43,7 +44,6 @@ const Home = ({ frontmatter }) => {
           </div>
         </div>
       </section>
-
       {/* Features */}
       <section className="section bg-theme-light">
         <div className="container">
@@ -74,8 +74,77 @@ const Home = ({ frontmatter }) => {
           </div>
         </div>
       </section>
+      {/* Service 2 */}
+      {listService.map((service, index) => {
+        const isOdd = index % 2 > 0;
+        return (
+          <section
+            key={`service-${index}`}
+            className={`section ${isOdd && "bg-theme-light"}`}
+          >
+            <div className="container">
+              <div className="items-center gap-8 md:grid md:grid-cols-2">
+                {/* Carousel */}
+                <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
+                  <Swiper
+                    modules={[Autoplay, Pagination]}
+                    pagination={
+                      service.images.length > 1 ? { clickable: true } : false
+                    }
+                    autoplay={{
+                      delay: 5000,
+                      disableOnInteraction: false,
+                    }}
+                    init={service?.images > 1 ? false : true}
+                  >
+                    {/* Slides */}
+                    {service?.images.map((slide, index) => (
+                      <SwiperSlide key={index}>
+                        <Image src={slide} alt="" width={600} height={500} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
 
-      {/* services */}
+                {/* Content */}
+                <div
+                  className={`service-content mt-5 md:mt-0 ${
+                    !isOdd && "md:order-1"
+                  }`}
+                >
+                  <h2 className="font-bold leading-[40px]">{service?.title}</h2>
+                  {service?.content.map((step, index) => (
+                    <div class="flex flex-row">
+                      <div className="mt-2 mb-1 mr-2 h-6 w-6 rounded-full bg-theme-light pl-0.5">
+                        <p className="ml-1 mb-2">{index}</p>
+                      </div>
+                      <div className="mt-1 mb-1">{step} </div>
+                      {/* <p className="mt-3 mb-2">{step}</p> */}
+                    </div>
+                  ))}
+
+                  {service.button.enable && (
+                    <Link
+                      href={service?.button.link}
+                      className="cta-link inline-flex items-center text-primary"
+                    >
+                      {service?.button.label}
+                      <Image
+                        className="ml-1"
+                        src="/images/arrow-right.svg"
+                        width={18}
+                        height={14}
+                        alt="arrow"
+                      />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })}
+      services
       {services.map((service, index) => {
         const isOdd = index % 2 > 0;
         return (
@@ -136,9 +205,8 @@ const Home = ({ frontmatter }) => {
           </section>
         );
       })}
-
       {/* workflow */}
-      <section className="section pb-0">
+      {/* <section className="section pb-0">
         <div className="mb-8 text-center">
           {markdownify(
             workflow.title,
@@ -153,8 +221,7 @@ const Home = ({ frontmatter }) => {
           width={1920}
           height={296}
         />
-      </section>
-
+      </section> */}
       {/* Cta */}
       <Cta cta={call_to_action} />
     </Base>
