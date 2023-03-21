@@ -240,9 +240,6 @@ function DropzoneComponent(props) {
     return false;
   };
 
-  console.log("active step");
-  console.log(activeStep);
-  console.log(steps.length);
   return (
     <>
       <div className={classes.loader}>

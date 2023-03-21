@@ -17,7 +17,7 @@ feature:
   - name: "Advanced Electronic Signature"
     icon: "/images/oop.svg"
     content: "Ensure extra credibility by our use of an Advanced Electronic Signature Service provider"
-  - name: "Convinience"
+  - name: "Convenience"
     icon: "/images/user-clock.svg"
     content: "Save time and avoid travelling by certifying your documents through our user-friendly platform"
 
@@ -58,6 +58,23 @@ workflow:
   image: "/images/banner.svg"
   description: ""
 
+# feature
+offerings: 
+  title: These are the documents you can verify and certify through the InTouch platform
+  features:
+  - name: "Affidavits"
+    icon: "/images/affidavit2.svg"
+    content: "Get your document certified by our Commissioner of Oaths"
+  - name: "Proof of residence"
+    icon: "/images/proofofresidence2.svg"
+    content: "Ensure extra credibility by our use of an Advanced Electronic Signature Service provider"
+  - name: "ID/Passport"
+    icon: "/images/ID2.svg"
+    content: "Save time and avoid travelling by certifying your documents through our user-friendly platform"
+  - name: "Drivers License"
+    icon: "/images/drivers2.svg"
+    content: "Save time and avoid travelling by certifying your documents through our user-friendly platform"
+
 # call_to_action
 call_to_action:
   title: Let us get your documents certified
@@ -65,6 +82,6 @@ call_to_action:
   image: '/images/cta.svg'
   button:
     enable: true
-    label: "Contact Us"
-    link: "/contact"
+    label: "Start certifying"
+    link: "/home"
 ---

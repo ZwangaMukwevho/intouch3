@@ -10,7 +10,7 @@ import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
 
 const Home = ({ frontmatter }) => {
-  const { banner, feature, services, workflow, call_to_action, listService } =
+  const { banner, feature, call_to_action, listService, offerings } =
     frontmatter;
   const { title } = config.site;
 
@@ -144,85 +144,36 @@ const Home = ({ frontmatter }) => {
           </section>
         );
       })}
-      services
-      {services.map((service, index) => {
-        const isOdd = index % 2 > 0;
-        return (
-          <section
-            key={`service-${index}`}
-            className={`section ${isOdd && "bg-theme-light"}`}
-          >
-            <div className="container">
-              <div className="items-center gap-8 md:grid md:grid-cols-2">
-                {/* Carousel */}
-                <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
-                  <Swiper
-                    modules={[Autoplay, Pagination]}
-                    pagination={
-                      service.images.length > 1 ? { clickable: true } : false
-                    }
-                    autoplay={{
-                      delay: 5000,
-                      disableOnInteraction: false,
-                    }}
-                    init={service?.images > 1 ? false : true}
-                  >
-                    {/* Slides */}
-                    {service?.images.map((slide, index) => (
-                      <SwiperSlide key={index}>
-                        <Image src={slide} alt="" width={600} height={500} />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
 
-                {/* Content */}
-                <div
-                  className={`service-content mt-5 md:mt-0 ${
-                    !isOdd && "md:order-1"
-                  }`}
-                >
-                  <h2 className="font-bold leading-[40px]">{service?.title}</h2>
-                  <p className="mt-4 mb-2">{service?.content}</p>
-                  {service.button.enable && (
-                    <Link
-                      href={service?.button.link}
-                      className="cta-link inline-flex items-center text-primary"
-                    >
-                      {service?.button.label}
-                      <Image
-                        className="ml-1"
-                        src="/images/arrow-right.svg"
-                        width={18}
-                        height={14}
-                        alt="arrow"
-                      />
-                    </Link>
-                  )}
-                </div>
+      {/* Offerings */}
+      <section className="section bg-theme-light">
+        <div className="container">
+          <div className="text-center">
+            <h2>{markdownify(feature.title)}</h2>
+          </div>
+          <div className="max mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+            {offerings.features.map((item, i) => (
+              <div
+                className="feature-card h-48 rounded-xl bg-white p-5 pb-8 text-center"
+                key={`feature-${i}`}
+              >
+                {item.icon && (
+                  <Image
+                    className="mx-auto"
+                    fixed
+                    src={item.icon}
+                    width={100}
+                    height={100}
+                    alt=""
+                  />
+                )}
+                <div className="mt-4">{markdownify(item.name, "h3", "h5")}</div>
               </div>
-            </div>
-          </section>
-        );
-      })}
-      {/* workflow */}
-      {/* <section className="section pb-0">
-        <div className="mb-8 text-center">
-          {markdownify(
-            workflow.title,
-            "h2",
-            "mx-auto max-w-[400px] font-bold leading-[44px]"
-          )}
-          {markdownify(workflow.description, "p", "mt-3")}
+            ))}
+          </div>
         </div>
-        <Image
-          src={workflow.image}
-          alt="workflow image"
-          width={1920}
-          height={296}
-        />
-      </section> */}
-      {/* Cta */}
+      </section>
+
       <Cta cta={call_to_action} />
     </Base>
   );
