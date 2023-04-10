@@ -4,6 +4,8 @@ import menu from "@config/menu.json";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import Cookies from "js-cookie";
+import { useAuthUserContext } from "../../logic/context/authUserContext";
 
 const Header = () => {
   //router
@@ -18,7 +20,24 @@ const Header = () => {
   // logo source
   const { logo } = config.site;
   const { enable, label, link } = config.nav_button;
-  const { enable2, label2, link2 } = config.nav_button2;
+
+  // Checks if user is logged in
+  const id = Cookies.get("id");
+  var isLoggedIn = false;
+  if (typeof id !== "undefined") {
+    isLoggedIn = true;
+  } else {
+    isLoggedIn = false;
+  }
+
+  // Logging out functionality
+  const { logOut } = useAuthUserContext();
+
+  const onSubmit = (event) => {
+    Cookies.remove("id");
+    logOut();
+    event.preventDefault();
+  };
 
   return (
     <header className="header">
@@ -96,7 +115,18 @@ const Header = () => {
                 )}
               </React.Fragment>
             ))}
-            {enable && (
+            {enable && isLoggedIn ? (
+              <li className="md:hidden">
+                <Link
+                  className="btn btn-primary z-0 py-[14px]"
+                  href={"/"}
+                  onClick={onSubmit}
+                  rel=""
+                >
+                  {"Log Out"}
+                </Link>
+              </li>
+            ) : (
               <div class="flex flex-col">
                 <li className="md:hidden">
                   <Link
@@ -121,7 +151,18 @@ const Header = () => {
             )}
           </ul>
         </div>
-        {enable && (
+        {isLoggedIn ? (
+          <div className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex">
+            <Link
+              onClick={onSubmit}
+              className="btn btn-primary z-0 mr-4 py-[14px]"
+              href={"/"}
+              rel=""
+            >
+              {"Log Out"}
+            </Link>
+          </div>
+        ) : (
           <div className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex">
             <Link
               className="btn btn-primary z-0 mr-4 py-[14px]"

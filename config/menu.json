@@ -5,6 +5,10 @@
       "url": "/"
     },
     {
+      "name": "Certify",
+      "url": "/home"
+    },
+    {
       "name": "Blog",
       "url": "/blogs"
     },

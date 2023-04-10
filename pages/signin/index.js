@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import classes from "./signin.module.css";
 import { formatFirebaseError } from "../../logic/data/format";
 import SpinnerLoader from "../../components/upload/spinnerLoader";
+import Cookies from "js-cookie";
 
 function SignIn() {
   const [email, setEmail] = useState("");
@@ -21,14 +22,10 @@ function SignIn() {
     setError(null);
     signIn(email, password)
       .then((authUser) => {
-        console.log(authUser.user.emailVerified);
         localStorage.setItem("id", JSON.stringify(authUser.user.uid));
-        // console.log("user");
-        // console.log(authUser);
-        // console.log("user");
-        // console.log(authUser.user.uid);
+        Cookies.set("id", authUser.user.uid);
         if (authUser.user.emailVerified) {
-          router.push("/home");
+          router.push("/");
           setLoader(false);
         } else {
           setLoader(false);
@@ -36,8 +33,6 @@ function SignIn() {
         }
       })
       .catch((error) => {
-        console.log(error);
-        console.log(error.message);
         setError(error.message);
         setLoader(false);
       });

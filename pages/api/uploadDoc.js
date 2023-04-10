@@ -5,7 +5,7 @@ async function fireBaseHandler(req, res) {
     "https://react-getting-started-78f85-default-rtdb.firebaseio.com/checks.json";
 
   if (req.method === "POST") {
-    const data = req.body;
+    const data = JSON.parse(req.body);
 
     // axios
     //   .post(baseUrl, {

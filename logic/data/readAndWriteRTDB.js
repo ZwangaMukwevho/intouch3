@@ -26,21 +26,4 @@ function WriteUserData(
   });
 }
 
-export function ReadUserData(userId) {
-  get(child(rtDatabase, `users/${userId}`))
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        console.log(snapshot.val());
-        return snapshot.val;
-      } else {
-        console.log("No data available");
-        return {};
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-      return {};
-    });
-}
-
 export default WriteUserData;

@@ -6,7 +6,7 @@ import { getDatabase } from "firebase/database";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyBXick9NSVrFt3NnImpDmUGBKDpGTg-nRo",
   authDomain: "react-getting-started-78f85.firebaseapp.com",
   databaseURL:
