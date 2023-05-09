@@ -5,12 +5,14 @@ import { ref, listAll, getMetadata } from "firebase/storage";
 import classes from "./docsList.module.css";
 import RowItemV2 from "../content/rowItemV2.js";
 import { dbDocsContext } from "../../logic/context/dbDocs.js";
+import Loader from "../../components/upload/loader.js";
 
 export default function DocsList() {
   const { dbDocs, setUpdateDocs } = useContext(dbDocsContext);
 
   const prevArrState = useRef([]);
   const [arr, setArr] = useState([]);
+  const [loading, setloading] = useState(true);
 
   const idArrState = useRef([]);
 
@@ -19,34 +21,107 @@ export default function DocsList() {
     id = JSON.parse(localStorage.getItem("id"));
   }
 
-  const listRef = ref(Storage, `drag/${id}`);
-  listAll(listRef).then((res) => {
-    res.items.forEach((itemRef) => {
-      getMetadata(itemRef).then((metadata) => {
-        var fileMetadata = {
-          id: metadata.generation,
-          name: itemRef.name,
-        };
-        fileMetadata.dateCreated = metadata.timeCreated;
-        fileMetadata.documentType = metadata["customMetadata"].documentType;
-        fileMetadata.status = metadata["customMetadata"].status;
-        fileMetadata.docRef = itemRef;
+  // const listRef = ref(Storage, `drag/${id}`);
+  // listAll(listRef).then((res) => {
+  //   var length = res.items.length;
+  //   var itemRef;
+  //   // console.log("item length");
+  //   // console.log(length);
+  //   for (let i = 0; i < length; i++) {
+  //     itemRef = res.items[i];
 
-        if (!idArrState.current.includes(metadata.generation)) {
-          prevArrState.current.push(fileMetadata);
-          idArrState.current.push(metadata.generation);
-          //
-          // console.log("unique items length", idArrState.current.length);
-          setArr([...arr, fileMetadata]);
-          setUpdateDocs(prevArrState.current);
+  //     getMetadata(itemRef).then((metadata) => {
+  //       var fileMetadata = {
+  //         id: metadata.generation,
+  //         name: itemRef.name,
+  //       };
+  //       fileMetadata.dateCreated = metadata.timeCreated;
+  //       fileMetadata.documentType = metadata["customMetadata"].documentType;
+  //       fileMetadata.status = metadata["customMetadata"].status;
+  //       fileMetadata.docRef = itemRef;
+
+  //       if (!idArrState.current.includes(metadata.generation)) {
+  //         prevArrState.current.push(fileMetadata);
+  //         idArrState.current.push(metadata.generation);
+  //         //
+  //         // console.log("unique items length", idArrState.current.length);
+  //         setArr([...arr, fileMetadata]);
+  //         setUpdateDocs(prevArrState.current);
+  //       }
+  //     });
+  //   }
+  //   setloading(false);
+  // });
+  // console.log("loading");
+  // console.log(loading);
+
+  // listAll(listRef).then((res) => {
+  //   res.items.forEach((itemRef) => {
+  //     getMetadata(itemRef).then((metadata) => {
+  //       var fileMetadata = {
+  //         id: metadata.generation,
+  //         name: itemRef.name,
+  //       };
+  //       fileMetadata.dateCreated = metadata.timeCreated;
+  //       fileMetadata.documentType = metadata["customMetadata"].documentType;
+  //       fileMetadata.status = metadata["customMetadata"].status;
+  //       fileMetadata.docRef = itemRef;
+
+  //       if (!idArrState.current.includes(metadata.generation)) {
+  //         prevArrState.current.push(fileMetadata);
+  //         idArrState.current.push(metadata.generation);
+  //         //
+  //         // console.log("unique items length", idArrState.current.length);
+  //         setArr([...arr, fileMetadata]);
+  //         setUpdateDocs(prevArrState.current);
+  //       }
+  //     });
+  //   });
+  // });
+
+  // console.log("db docs");
+  // console.log(dbDocs);
+  useEffect(() => {
+    async function getMetadataForFiles() {
+      try {
+        const listRef = ref(Storage, `drag/${id}`);
+        const res = await listAll(listRef)
+        
+        var length = res.items.length;
+        var itemRef;
+        var fileMetadata
+
+        for (let i = 0; i < length; i++) {
+          itemRef = res.items[i];
+
+          let metadata = await getMetadata(itemRef)
+          fileMetadata = {
+            id: metadata.generation,
+            name: itemRef.name,
+          };
+          fileMetadata.dateCreated = metadata.timeCreated;
+          fileMetadata.documentType =
+            metadata["customMetadata"].documentType;
+          fileMetadata.status = metadata["customMetadata"].status;
+          fileMetadata.docRef = itemRef;
+
+          if (!idArrState.current.includes(metadata.generation)) {
+            prevArrState.current.push(fileMetadata);
+            idArrState.current.push(metadata.generation);
+            //
+            // console.log("unique items length", idArrState.current.length);
+            setArr([...arr, fileMetadata]);
+            setUpdateDocs(prevArrState.current);
+          }
         }
-      });
-    });
-  });
+        setloading(false);
 
-  console.log("db docs");
-  console.log(dbDocs);
-  useEffect(() => {}, [arr]);
+      } catch (err) {
+        console.error("Error getting metadata for files:");
+      }
+    }
+    getMetadataForFiles();
+  }, []);
 
   const [pageNumber, setPageNumber] = useState(0);
   const usersPerPage = 5;
@@ -73,7 +148,9 @@ export default function DocsList() {
     setPageNumber(selected);
   };
 
-  return (
+  return loading ? (
+    <Loader bool={loading} />
+  ) : (
     <div className={classes.tableBackround}>
       <div className={classes.marginBottom}>{displayRows}</div>
       <ReactPaginate
