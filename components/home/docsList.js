@@ -9,6 +9,7 @@ import Loader from "../../components/upload/loader.js";
 
 export default function DocsList() {
   const { dbDocs, setUpdateDocs } = useContext(dbDocsContext);
+  var tempArr = [];
 
   const prevArrState = useRef([]);
   const [arr, setArr] = useState([]);
@@ -21,101 +22,46 @@ export default function DocsList() {
     id = JSON.parse(localStorage.getItem("id"));
   }
 
-  // const listRef = ref(Storage, `drag/${id}`);
-  // listAll(listRef).then((res) => {
-  //   var length = res.items.length;
-  //   var itemRef;
-  //   // console.log("item length");
-  //   // console.log(length);
-  //   for (let i = 0; i < length; i++) {
-  //     itemRef = res.items[i];
-
-  //     getMetadata(itemRef).then((metadata) => {
-  //       var fileMetadata = {
-  //         id: metadata.generation,
-  //         name: itemRef.name,
-  //       };
-  //       fileMetadata.dateCreated = metadata.timeCreated;
-  //       fileMetadata.documentType = metadata["customMetadata"].documentType;
-  //       fileMetadata.status = metadata["customMetadata"].status;
-  //       fileMetadata.docRef = itemRef;
-
-  //       if (!idArrState.current.includes(metadata.generation)) {
-  //         prevArrState.current.push(fileMetadata);
-  //         idArrState.current.push(metadata.generation);
-  //         //
-  //         // console.log("unique items length", idArrState.current.length);
-  //         setArr([...arr, fileMetadata]);
-  //         setUpdateDocs(prevArrState.current);
-  //       }
-  //     });
-  //   }
-  //   setloading(false);
-  // });
-  // console.log("loading");
-  // console.log(loading);
-
-  // listAll(listRef).then((res) => {
-  //   res.items.forEach((itemRef) => {
-  //     getMetadata(itemRef).then((metadata) => {
-  //       var fileMetadata = {
-  //         id: metadata.generation,
-  //         name: itemRef.name,
-  //       };
-  //       fileMetadata.dateCreated = metadata.timeCreated;
-  //       fileMetadata.documentType = metadata["customMetadata"].documentType;
-  //       fileMetadata.status = metadata["customMetadata"].status;
-  //       fileMetadata.docRef = itemRef;
-
-  //       if (!idArrState.current.includes(metadata.generation)) {
-  //         prevArrState.current.push(fileMetadata);
-  //         idArrState.current.push(metadata.generation);
-  //         //
-  //         // console.log("unique items length", idArrState.current.length);
-  //         setArr([...arr, fileMetadata]);
-  //         setUpdateDocs(prevArrState.current);
-  //       }
-  //     });
-  //   });
-  // });
-
-  // console.log("db docs");
-  // console.log(dbDocs);
   useEffect(() => {
     async function getMetadataForFiles() {
       try {
         const listRef = ref(Storage, `drag/${id}`);
-        const res = await listAll(listRef)
-        
+        const res = await listAll(listRef);
+
         var length = res.items.length;
         var itemRef;
-        var fileMetadata
+        var fileMetadata;
 
         for (let i = 0; i < length; i++) {
           itemRef = res.items[i];
 
-          let metadata = await getMetadata(itemRef)
+          let metadata = await getMetadata(itemRef);
           fileMetadata = {
             id: metadata.generation,
             name: itemRef.name,
           };
           fileMetadata.dateCreated = metadata.timeCreated;
-          fileMetadata.documentType =
-            metadata["customMetadata"].documentType;
+          fileMetadata.documentType = metadata["customMetadata"].documentType;
           fileMetadata.status = metadata["customMetadata"].status;
           fileMetadata.docRef = itemRef;
 
-          if (!idArrState.current.includes(metadata.generation)) {
-            prevArrState.current.push(fileMetadata);
-            idArrState.current.push(metadata.generation);
-            //
-            // console.log("unique items length", idArrState.current.length);
-            setArr([...arr, fileMetadata]);
-            setUpdateDocs(prevArrState.current);
-          }
+          // if (!idArrState.current.includes(metadata.generation)) {
+          //   prevArrState.current.push(fileMetadata);
+          //   idArrState.current.push(metadata.generation);
+          //   //
+          //   // console.log("unique items length", idArrState.current.length);
+          //   setArr([...arr, fileMetadata]);
+          //   setUpdateDocs(prevArrState.current);
+          // }
+          tempArr.push(fileMetadata);
         }
-        setloading(false);
 
+        let uniqueDocs = tempArr.filter((doc, index, arr) => {
+          return arr.findIndex((p) => p.id === doc.id) === index;
+        });
+
+        setUpdateDocs(uniqueDocs);
+        setloading(false);
       } catch (err) {
         console.error("Error getting metadata for files:");
       }
@@ -143,7 +89,7 @@ export default function DocsList() {
       );
     });
 
-  const docsCount = Math.ceil(prevArrState.current.length / usersPerPage);
+  const docsCount = Math.ceil(dbDocs.length / usersPerPage);
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
