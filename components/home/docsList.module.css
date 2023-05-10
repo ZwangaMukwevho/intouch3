@@ -101,6 +101,11 @@
   .marginBottom {
     margin-bottom: 30px;
   }
+
+.centerDiv {
+  display: flex;
+  justify-content: center;
+}
  
   @media screen and (max-width: 480px) {
     .marginBottom {

@@ -34,6 +34,7 @@ const Header = () => {
   const { logOut } = useAuthUserContext();
 
   const onSubmit = (event) => {
+    router.push("/");
     Cookies.remove("id");
     logOut();
     event.preventDefault();
