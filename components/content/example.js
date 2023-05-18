@@ -4,7 +4,7 @@ import { Dropdown } from "semantic-ui-react";
 import { DocTypeContext } from "../../logic/context/docTypeContext";
 import { useContext } from "react";
 
-function dropDown(props) {
+function DropDown(props) {
   const docOptions = [
     { key: "type unselected", text: "type unselected", value: "angular" },
     { key: "ID", text: "Identity Document", value: "angular" },
@@ -54,4 +54,4 @@ function dropDown(props) {
   );
 }
 
-export default dropDown;
+export default DropDown;

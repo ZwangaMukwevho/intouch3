@@ -45,7 +45,7 @@ export default function DocsList() {
         let uniqueDocs = tempArr.filter((doc, index, arr) => {
           return arr.findIndex((p) => p.id === doc.id) === index;
         });
-
+        localStorage.setItem("_files", JSON.stringify(uniqueDocs.length));
         setUpdateDocs(uniqueDocs);
         setloading(false);
       } catch (err) {

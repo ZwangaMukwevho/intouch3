@@ -40,6 +40,8 @@ export function formatFirebaseError(error) {
       return "Invalid or unknown email address entered";
     case "unverified":
       return "Email not verifieid. Click link sent to this email to verify account";
+    case "noPlanChosen":
+      return "Pick a plan you want to register with";
     case null:
       return "";
     default:

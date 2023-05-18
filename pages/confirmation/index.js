@@ -36,7 +36,7 @@ function Confirmation() {
         <div>
           <p>{confirmationMessage}</p>
           <p>
-            {"To proceed go and click on the verification link than sign in"}
+            {"To proceed go and click on the verification link then sign in"}
           </p>
         </div>
       }

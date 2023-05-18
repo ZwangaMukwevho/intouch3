@@ -114,7 +114,7 @@ const Home = ({ frontmatter }) => {
                 >
                   <h2 className="font-bold leading-[40px]">{service?.title}</h2>
                   {service?.content.map((step, index) => (
-                    <div class="flex flex-row">
+                    <div class="flex flex-row" key={index}>
                       <div className="mt-2 mb-1 mr-2 h-6 w-6 rounded-full bg-theme-light pl-0.5">
                         <p className="ml-1 mb-2">{index}</p>
                       </div>

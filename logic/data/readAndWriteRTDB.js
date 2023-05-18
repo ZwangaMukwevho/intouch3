@@ -15,7 +15,8 @@ function WriteUserData(
   email,
   profilePictureURL,
   IDNumber,
-  phoneNumber
+  phoneNumber,
+  plan
 ) {
   set(ref(rtDatabase, "users/" + userId), {
     fullName: fullName,
@@ -23,6 +24,7 @@ function WriteUserData(
     profilePictureURL: profilePictureURL,
     IDNumber: IDNumber,
     phoneNumber: phoneNumber,
+    plan: plan,
   });
 }
 

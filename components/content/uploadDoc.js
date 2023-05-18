@@ -6,28 +6,25 @@ import { useContext } from "react";
 
 function uploadDoc(props) {
   const { consent, setConsent } = useContext(consentContext);
-  if (!consent) {
-    return (
-      <UploadProvider>
-        <div className={classes.infoPar}>
-          <div className={classes.title}>
-            <p>Accept consent checkbox in order to upload documents</p>
-          </div>
+
+  return consent ? (
+    <UploadProvider>
+      <div className={classes.infoPar}>
+        <div className={classes.title}>
+          <p>Drop your document here or click to browse</p>
         </div>
-      </UploadProvider>
-    );
-  } else {
-    return (
-      <UploadProvider>
-        <div className={classes.infoPar}>
-          <div className={classes.title}>
-            <p>Drop your document here or click to browse</p>
-          </div>
-          <DropzoneComponent docType={props.docType} />
+        <DropzoneComponent docType={props.docType} />
+      </div>
+    </UploadProvider>
+  ) : (
+    <UploadProvider>
+      <div className={classes.infoPar}>
+        <div className={classes.title}>
+          <p>Accept consent checkbox in order to upload documents</p>
         </div>
-      </UploadProvider>
-    );
-  }
+      </div>
+    </UploadProvider>
+  );
 }
 
 export default uploadDoc;

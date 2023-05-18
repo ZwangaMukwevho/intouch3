@@ -7,6 +7,8 @@ import classes from "./signup.module.css";
 import SpinnerLoader from "../../components/upload/spinnerLoader";
 import { formatFirebaseError } from "../../logic/data/format";
 import WriteUserData from "../../logic/data/readAndWriteRTDB";
+import SelectLabels from "components/form/planDropdown";
+import { planContext } from "logic/context/planContext";
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -15,8 +17,11 @@ function SignUp() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [passwordOne, setPasswordOne] = useState("");
   const [passwordTwo, setPasswordTwo] = useState("");
+  const [plan, setPlan] = useState("");
   const [loader, setLoader] = useState(false);
   const router = useRouter();
+  console.log("plan");
+  console.log(plan);
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(email));
@@ -59,7 +64,8 @@ function SignUp() {
             email,
             "",
             IDNumber,
-            phoneNumber
+            phoneNumber,
+            plan
           );
 
           setLoader(false);
@@ -174,6 +180,17 @@ function SignUp() {
             id="signUpPassword2"
           />
         </div>
+
+        <div className={classes.inputContainer}>
+          <label>
+            {" "}
+            <b>{"Choose plan"}</b>{" "}
+          </label>
+          <planContext.Provider value={[plan, setPlan]}>
+            <SelectLabels />
+          </planContext.Provider>
+        </div>
+
         <div>
           <p className={classes.errorMessage}>{formatFirebaseError(error)}</p>
         </div>

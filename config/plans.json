@@ -1,0 +1,15 @@
+{
+  "subscriptions": [
+    {
+      "key": "basic_01",
+      "text": "basic",
+      "value": "basic_01"
+    },
+    {
+      "key": "proffessional_01",
+      "text": "professional",
+      "value": "proffessional_01"
+    },
+    { "key": "business_01", "text": "business", "value": "business_01" }
+  ]
+}

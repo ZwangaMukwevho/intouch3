@@ -14,7 +14,7 @@ function ParentForm(props) {
   return (
     <div className={classes.app}>
       <div className={classes.loginForm}>
-        <p style={classes.infoStyle}>{props.infotagone}</p>
+        <div style={classes.infoStyle}>{props.infotagone}</div>
         <p className={classes.title}>{props.title}</p>
         <p style={classes.infoStyle}>{props.infotagtwo}</p>
         <div>{props.form}</div>

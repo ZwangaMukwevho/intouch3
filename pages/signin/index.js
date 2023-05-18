@@ -112,7 +112,7 @@ function SignIn() {
     <ParentForm
       infotagone={
         <div>
-          Don't have an account already?{" "}
+          Don&apos;t have an account already?{" "}
           <Link
             href="/signup"
             style={{

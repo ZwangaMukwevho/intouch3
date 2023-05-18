@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     background-color: #f8f9fd;
@@ -16,7 +16,7 @@
     border-radius: 15px;
     padding-top: 1rem;
     padding-right: 6rem;
-    padding-bottom: 6rem;
+    padding-bottom: 1rem;
     padding-left: 6rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
