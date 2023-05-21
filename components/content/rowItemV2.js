@@ -6,7 +6,7 @@ import { download } from "../../logic/download.js";
 
 export default function RowItemV2(props) {
   const status = getStatus(props.status);
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,6 +25,7 @@ export default function RowItemV2(props) {
     };
   }, []);
 
+  console.log(width);
   return width <= 480 ? (
     <>
       <div className={classes.row}>

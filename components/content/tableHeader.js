@@ -2,7 +2,7 @@ import classes from "./tableHeader.module.css";
 import { useEffect, useState } from "react";
 
 function TableHeader() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
