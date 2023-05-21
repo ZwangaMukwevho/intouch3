@@ -8,7 +8,8 @@ import SpinnerLoader from "../../components/upload/spinnerLoader";
 import { formatFirebaseError } from "../../logic/data/format";
 import WriteUserData from "../../logic/data/readAndWriteRTDB";
 import SelectLabels from "components/form/planDropdown";
-import { planContext } from "logic/context/planContext";
+import { PlanContext } from "logic/context/planContext";
+import PlanChoiceIcon from "components/form/planIcon";
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -20,8 +21,6 @@ function SignUp() {
   const [plan, setPlan] = useState("");
   const [loader, setLoader] = useState(false);
   const router = useRouter();
-  console.log("plan");
-  console.log(plan);
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(email));
@@ -186,9 +185,13 @@ function SignUp() {
             {" "}
             <b>{"Choose plan"}</b>{" "}
           </label>
-          <planContext.Provider value={[plan, setPlan]}>
-            <SelectLabels />
-          </planContext.Provider>
+
+          <div className={classes.planContainer}>
+            <PlanContext.Provider value={{ plan, setPlan }}>
+              <SelectLabels />
+            </PlanContext.Provider>
+            <PlanChoiceIcon />
+          </div>
         </div>
 
         <div>

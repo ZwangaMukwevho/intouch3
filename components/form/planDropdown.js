@@ -3,13 +3,13 @@ import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { useState } from "react";
-import { planContext } from "logic/context/planContext";
+import { useContext } from "react";
+import { PlanContext } from "logic/context/planContext";
 import plans from "@config/plans.json";
 
 export default function SelectLabels() {
   const { subscriptions } = plans;
-  const [plan, setPlan] = useState(planContext);
+  const { plan, setPlan } = useContext(PlanContext);
 
   const handleChange = (event) => {
     setPlan(event.target.value);
@@ -30,7 +30,7 @@ export default function SelectLabels() {
             <em>None</em>
           </MenuItem>
           {subscriptions.map((sub, _) => {
-            return <MenuItem value={10}>{sub.text}</MenuItem>;
+            return <MenuItem value={sub.text}>{sub.text}</MenuItem>;
           })}
         </Select>
         <FormHelperText>Required</FormHelperText>

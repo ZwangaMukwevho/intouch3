@@ -1,2 +1,2 @@
 import { createContext } from "react";
-export const planContext = createContext(null);
+export const PlanContext = createContext(null);

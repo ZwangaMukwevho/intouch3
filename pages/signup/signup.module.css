@@ -53,6 +53,13 @@
     border-style: "dashed";
 }
 
+.planContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 480px) {
   .inputContainer {
     display: flex;

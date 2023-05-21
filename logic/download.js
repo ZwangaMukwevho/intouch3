@@ -15,9 +15,6 @@ export function download(status, itemRef, fileName, docId) {
   const { dbDocs, setUpdateDocs } = useContext(dbDocsContext);
   const getDocDownloadURL = () => {
     getDownloadURL(itemRef).then((url) => {
-      console.log("file url");
-      console.log(url);
-
       axios({
         url: url, //your url
         method: "GET",
@@ -58,7 +55,6 @@ export function download(status, itemRef, fileName, docId) {
   };
 
   const deleteFile = () => {
-    console.log("delete called");
     invertIsOpen();
     removeDocFromArray(docId);
     // Delete the file
