@@ -31,6 +31,7 @@ export default function DocToUploadRow(props) {
           onClick={removeDocFromArray}
           role="button"
           disableRipple={true}
+          /* eslint-disable */
           children={
             <CancelOutlinedIcon
               fontSize="medium"
@@ -38,6 +39,7 @@ export default function DocToUploadRow(props) {
               sx={{ "&:hover": { color: "#ff0000", fontSize: "22px" } }}
             ></CancelOutlinedIcon>
           }
+          /* eslint-enable */
         ></IconButton>
       </div>
     </div>

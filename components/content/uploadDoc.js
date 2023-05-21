@@ -4,7 +4,7 @@ import UploadProvider from "../../logic/context/uploadProgressContext";
 import { consentContext } from "../../logic/context/consentContext";
 import { useContext } from "react";
 
-function uploadDoc(props) {
+function UploadDoc(props) {
   const { consent, setConsent } = useContext(consentContext);
 
   return consent ? (
@@ -27,4 +27,4 @@ function uploadDoc(props) {
   );
 }
 
-export default uploadDoc;
+export default UploadDoc;
