@@ -43,8 +43,13 @@ export default function DocsList() {
         }
 
         let uniqueDocs = tempArr.filter((doc, index, arr) => {
-          return arr.findIndex((p) => p.id === doc.id) === index;
+          const isDuplicateId = arr.findIndex((p) => p.id === doc.id) !== index;
+          const isYourselfHoldingID =
+            doc.documentType === "yourself holding ID";
+
+          return !isDuplicateId && !isYourselfHoldingID;
         });
+
         localStorage.setItem("_files", JSON.stringify(uniqueDocs.length));
         setUpdateDocs(uniqueDocs);
         setloading(false);
