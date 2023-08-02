@@ -6,6 +6,7 @@ import { useContext } from "react";
 
 function DropDown(props) {
   const docOptions = [
+    { key: "step 1", text: "yourself holding ID", value: "angular" },
     { key: "type unselected", text: "type unselected", value: "angular" },
     { key: "ID", text: "Identity Document", value: "angular" },
     { key: "marriageCert", text: "Marriage Certificate", value: "css" },

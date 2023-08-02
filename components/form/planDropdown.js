@@ -29,8 +29,12 @@ export default function SelectLabels() {
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          {subscriptions.map((sub, _) => {
-            return <MenuItem value={sub.text}>{sub.text}</MenuItem>;
+          {subscriptions.map((sub, index) => {
+            return (
+              <MenuItem key={index} value={sub.text}>
+                {sub.text}
+              </MenuItem>
+            );
           })}
         </Select>
         <FormHelperText>Required</FormHelperText>

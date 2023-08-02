@@ -25,7 +25,6 @@ export default function RowItemV2(props) {
     };
   }, []);
 
-  console.log(width);
   return width <= 480 ? (
     <>
       <div className={classes.row}>

@@ -6,7 +6,6 @@ import Storage from "../../logic/config/firebaseConfig.js";
 import { DocsArrayContext } from "../../logic/context/uploadProgressContext";
 import DocsToUpload from "./docsToUpload";
 import { useContext, useEffect, useRef } from "react";
-import HorizontalLinearStepper from "../../components/upload/horizontalLinearStepper";
 import Loader from "../../components/upload/loader.js";
 import {
   ref,
@@ -61,8 +60,8 @@ const steps = [
 function DropzoneComponent(props) {
   const [error, setError] = useState("");
   const [loader, setLoader] = useState(false);
-  // const [docsToUploadArr, setDocsToUploadArr] = useState([]);
   const { docsToUploadArr, setDocsToUploadArr } = useContext(DocsArrayContext);
+  const [disable, setDisable] = useState(false);
 
   //  Checks if file is allowed
   function isFileAllowed(fileObject) {
@@ -114,6 +113,7 @@ function DropzoneComponent(props) {
       "image/jpg": [],
       "application/pdf": [],
     },
+    disabled: disable,
   });
 
   const style = useMemo(

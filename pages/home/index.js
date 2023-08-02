@@ -31,8 +31,6 @@ export default function SideBarTest(props) {
 
   // Document stuff
   const [docTypeVal, setDocType] = useState("None");
-  console.log("docs");
-  console.log(props.docs);
   const { title } = config.site;
 
   return (

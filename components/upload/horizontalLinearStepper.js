@@ -92,9 +92,6 @@ export default function HorizontalLinearStepper(props) {
     return step === 2;
   };
 
-  console.log("active step");
-  console.log(activeStep);
-  console.log(props.docCount);
   return (
     <Box sx={{ width: "100%" }}>
       <Stepper

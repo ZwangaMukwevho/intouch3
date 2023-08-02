@@ -1,143 +1,33 @@
 ---
-title: "What you need to know about Photography"
-description: "Heading example Here is example of hedings. You can use this heading by following markdownify rules."
-image: "/images/blog-1.jpg"
+title: "Demystifying Document Certification: Unmasking the Secret Agents of Authentication"
+description: "Unmasking the Secret Agents of Authentication."
+image: "/images/blog-1-certification.jpg"
 date: 2022-04-04T05:00:00Z
 draft: false
 ---
 
-##### Heading example
-
-Here is an example of headings. You can use this heading by the following markdown rules. For example: use `#` for heading 1 and use `######` for heading 6.
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
+## Introduction
 ---
+Document certification - the cloak and dagger of official paperwork! It's that mysterious process that bestows official documents with superpowers of authenticity and credibility. Whether you're a job seeker, globe-trotter, or legal ninja, certified documents are your secret weapon to conquer the bureaucratic maze. In this blog, we'll unveil the hidden truth behind document certification and decode the essential requirements for wielding these powerful certificates.
 
-##### Emphasis
+##### What is Document Certification? (Enter the Spy Lair)
+Welcome to the top-secret world of document certification! Picture yourself in a clandestine mission where our undercover agents, the Commissioners of Oaths and Notaries, put their stamp of approval on copies of official documents. Their mission, should they choose to accept it, is to verify the authenticity of these copies and ensure they remain true to the original files.
 
-The emphasis, aka italics, with _asterisks_ or _underscores_.
+##### Types of Documents That Require Certification (Agent 007 Approved)
+Move over, James Bond, because these documents are classified "For Your Eyes Only!" You guessed it - passports, national identification cards, educational certificates, and even marriage certificates and divorce decrees need the official 007 treatment. And remember, folks, don't leave home without your license to certify!
 
-Strong emphasis, aka bold, with **asterisks** or **underscores**.
+##### Importance of Document Certification (License to Certify: Mission Critical)
+Why is document certification so vital? It's the stuff that dreams are made of - the validation of your true identity and qualifications! From legal compliance to international acceptance, certified documents are your golden ticket to gaining trust and credibility in the most top-secret operations.
 
-The combined emphasis with **asterisks and _underscores_**.
+##### What You Need to Certify Documents (Agent Gadgets: Locked and Loaded)
+To join the ranks of the certified elite, gather your arsenal of requirements: the original documents (because copies without originals are like villains without a nemesis), certified copies (think of them as your sidekicks), and of course, a trusty Commissioner of Oaths or Notary to put their stamp of approval on your mission.
 
-Strikethrough uses two tildes. ~~Scratch this.~~
+##### Online Certification - The Future Prospect (Virtual Reality, Virtually Certified!)
+As technology advances, the mysterious world of document certification is getting a high-tech upgrade! Picture this: online certification - no need to leave your secret lair! While it might not be widely available in all regions yet, the promise of accessibility, speed, and unbreakable encryption means online certification is the Bond gadget of the future.
 
+## Conclusion (Mission Accomplished!)
 ---
-
-##### Link
-
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.themefisher.com
-[1]: https://gethugothemes.com
-[link text itself]: https://www.getjekyllthemes.com
-
----
-
-##### Paragraph
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus, facilis placeat pariatur! Voluptatem, sed harum pariatur adipisci voluptates voluptatum cumque, porro sint minima similique magni perferendis fuga! Optio vel ipsum excepturi tempore reiciendis id quidem? Vel in, doloribus debitis nesciunt fugit sequi magnam accusantium modi neque quis, vitae velit, pariatur harum autem a! Velit impedit atque maiores animi possimus asperiores natus repellendus excepturi sint architecto eligendi non, omnis nihil. Facilis, doloremque illum. Fugit optio laborum minus debitis natus illo perspiciatis corporis voluptatum rerum laboriosam.
-
----
-
-##### Ordered List
-
-1. List item
-2. List item
-3. List item
-4. List item
-5. List item
-
----
-
-##### Unordered List
-
-- List item
-- List item
-- List item
-- List item
-- List item
-
----
-
-##### Code and Syntax Highlighting
-
-This is an `Inline code` sample.
-
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
-
-```python
-s = "Python syntax highlighting"
-print s
-```
-
----
-
-##### Blockquote
-
-> This is a blockquote example.
-
----
-
-##### Inline HTML
-
-You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
-
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
----
-
-##### Tables
-
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the
-raw Markdown line up prettily. You can also use inline Markdown.
-
-| Markdown | Less      | Pretty     |
-| -------- | --------- | ---------- |
-| _Still_  | `renders` | **nicely** |
-| 1        | 2         | 3          |
+Document certification is the secret sauce to make your mark in the world. It's like having your very own secret agent to vouch for your documents' authenticity and give you a license to take on any challenge. So, gear up, get those documents ready, and march into the realm of certified greatness. Remember, in the world of documents, with great certification comes great possibilities! The certified world awaits your grand entrance, so go forth and conquer!
 
 ---
 
