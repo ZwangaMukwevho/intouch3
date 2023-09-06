@@ -1,4 +1,3 @@
-import HeaderBar from "../../components/main/headerBar";
 import classes from "./home.module.css";
 import Example from "../../components/content/example.js";
 import React, { useContext, useEffect } from "react";
@@ -13,8 +12,6 @@ import ConsentProvider from "../../logic/context/consentContext";
 import Checkbox from "../../components/home/checkbox";
 import Base from "@layouts/Baseof";
 import config from "@config/config.json";
-import adminApp from "../../logic/config/initialiseFirebaseAdmin";
-import { getAuth } from "firebase/auth";
 
 export default function SideBarTest(props) {
   const x = 1;
