@@ -25,7 +25,7 @@ function SignIn() {
         localStorage.setItem("id", JSON.stringify(authUser.user.uid));
         Cookies.set("id", authUser.user.uid);
         if (authUser.user.emailVerified) {
-          router.push("/home");
+          router.push("/");
           setLoader(false);
         } else {
           setLoader(false);
@@ -54,7 +54,7 @@ function SignIn() {
 
   useEffect(() => {
     // Prefetch the home page
-    router.prefetch("/home");
+    router.prefetch("/certify");
   }, []);
 
   const renderForm = (

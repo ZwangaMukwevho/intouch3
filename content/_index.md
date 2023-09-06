@@ -83,5 +83,5 @@ call_to_action:
   button:
     enable: true
     label: "Start certifying"
-    link: "/home"
+    link: "/certify"
 ---
