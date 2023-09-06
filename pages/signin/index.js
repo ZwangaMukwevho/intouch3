@@ -25,7 +25,7 @@ function SignIn() {
         localStorage.setItem("id", JSON.stringify(authUser.user.uid));
         Cookies.set("id", authUser.user.uid);
         if (authUser.user.emailVerified) {
-          router.push("/");
+          router.push("/home");
           setLoader(false);
         } else {
           setLoader(false);
