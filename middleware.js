@@ -1,15 +1,17 @@
 import { NextResponse } from "next/server";
 
-export default function middleware(req) {
-  let verify = req.cookies.get("id");
+export default function middleware(req, res) {
+  let verifyCookie = req.cookies.get("id");
   let url = req.url;
 
-  console.log("verify");
-  console.log(url);
-  const currentTime = new Date();
-  console.log(currentTime);
-  console.log("");
-  if (!verify && url.includes("/certify")) {
-    return NextResponse.redirect("http://localhost:3000/signin");
+  if (url.includes("/certify")) {
+    // Check if the "verify" cookie does not exist or does not have the expected value
+    if (
+      !verifyCookie ||
+      (typeof verifyCookie === "object" && verifyCookie.name !== "id")
+    ) {
+      // Redirect to the "signin" page
+      return NextResponse.redirect("http://localhost:3000/signin");
+    }
   }
 }
