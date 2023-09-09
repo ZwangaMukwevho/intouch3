@@ -15,27 +15,26 @@ export function download(status, itemRef, fileName, docId) {
   const { dbDocs, setUpdateDocs } = useContext(dbDocsContext);
   const getDocDownloadURL = () => {
     getDownloadURL(itemRef).then((url) => {
-      axios({
-        url: url, //your url
-        method: "GET",
-        responseType: "blob",
-        headers: { "Access-Control-Allow-Origin": "*" },
-        // important
-      }).then((response) => {
-        // create file link in browser's memory
-        const href = URL.createObjectURL(response.data);
+      fetch(url)
+        .then((response) => response.blob())
+        .then((blob) => {
+          // Create a Blob URL for the downloaded file
+          const blobUrl = URL.createObjectURL(blob);
 
-        // create "a" HTML element with href to file & click
-        const link = document.createElement("a");
-        link.href = href;
-        link.setAttribute("download", fileName); //or any other extension
-        document.body.appendChild(link);
-        link.click();
+          // Create a temporary anchor element for downloading
+          const link = document.createElement("a");
+          link.href = blobUrl;
+          link.setAttribute("download", fileName);
 
-        // clean up "a" element & remove ObjectURL
-        document.body.removeChild(link);
-        URL.revokeObjectURL(href);
-      });
+          // Trigger a click event on the anchor element
+          link.click();
+
+          // Clean up
+          URL.revokeObjectURL(blobUrl);
+        })
+        .catch((error) => {
+          console.error("Error downloading file:", error);
+        });
     });
   };
 
