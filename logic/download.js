@@ -144,7 +144,27 @@ export function download(status, itemRef, fileName, docId) {
       return (
         <div className={classes.certified}>
           <div id={classes.item}>
-            <Popup
+            <IconButton
+              color="info"
+              sx={{
+                "&:hover": { color: "#ff0000", fontSize: "22px" },
+                // p: 0,
+                p: 0,
+              }}
+              onClick={getDocDownloadURL}
+              role="button"
+              children={
+                <DownloadForOfflineOutlinedIcon
+                  fontSize="medium"
+                  color="action"
+                  sx={{
+                    "&:hover": { color: "#333634", fontSize: "22px" },
+                    p: 0,
+                  }}
+                ></DownloadForOfflineOutlinedIcon>
+              }
+            ></IconButton>
+            {/* <Popup
               content="Add users to your feed"
               trigger={
                 <IconButton
@@ -170,7 +190,7 @@ export function download(status, itemRef, fileName, docId) {
               }
               children={<p>Click button to download document</p>}
               on={["hover"]}
-            />
+            /> */}
           </div>
           <div id={classes.item2}>
             <Popup
