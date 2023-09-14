@@ -18,7 +18,7 @@ const Home = ({ frontmatter }) => {
     <Base title={title}>
       {/* Banner */}
       <section className="section pb-[50px]">
-        <div className="container">
+        <div className="w-full">
           <div className="row text-center">
             <div className="mx-auto lg:col-10">
               <h1 className="font-primary font-bold">{banner.title}</h1>
@@ -35,7 +35,7 @@ const Home = ({ frontmatter }) => {
               <Image
                 className="mx-auto mt-12"
                 src={banner.image}
-                width={750}
+                width={8000}
                 height={390}
                 alt="banner image"
                 priority

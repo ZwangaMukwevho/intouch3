@@ -1,8 +1,8 @@
 ---
 banner:
-  title: What is Intouch?
-  content: InTouch is an electronic document certification system dedicated to alleviating the time and resources spent to certify documents.
-  image: /images/banner-art.svg
+  title:
+  content:
+  image: /images/banner_edited.png
   button:
     label: "Contact Us"
     link: "/contact"
@@ -44,9 +44,9 @@ listService:
       - "Await the return of your certified document"
       - "Retrieve your ceritified document on the document upload page"
     images:
-      - "/images/service-slide-1.png"
-      - "/images/service-slide-2.png"
-      - "/images/service-slide-3.png"
+      - "/images/services-slide-1.jpg"
+      - "/images/services-slide-2.jpg"
+      - "/images/services-slide-3.jpg"
     button:
       enable: true
       label: Check it out
